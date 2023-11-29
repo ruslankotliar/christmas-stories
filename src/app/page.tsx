@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main>
       <section id="banner" className="h-screen pt-32 bg-primary relative">
-        <div className="max-w-screen-xl mx-auto h-full">
+        <div className="max-w-screen-xl mx-auto h-full py-4 px-8">
           <div className="absolute z-20 left-0 bottom-32 right-0 mx-auto" id="arrow-scroll-hint">
             <Link href="#services">
               <span></span>
@@ -24,7 +24,7 @@ export default function Home() {
                 </span>
               </h1>
             </div>
-            <div className="m-10 h-1/2 relative">
+            <div className="my-10 h-1/2 relative">
               <Image
                 src={'/images/main-bg.png'}
                 alt="Christmas background image"
@@ -33,7 +33,7 @@ export default function Home() {
                 className="rounded-md shadow-md"
               />
             </div>
-            <div className="py-4 px-8">
+            <div>
               <p className={`${roboto.className} text-base`}>
                 Різдво — надзвичайно світле, тепле свято з глибоким корінням та найулюбленіше свято
                 дорослих та дітей! Цього року Кловський Сад створює неповторну благодійну фотозону
@@ -100,9 +100,9 @@ export default function Home() {
 
       <section
         id="about-us"
-        className="h-screen flex justify-center items-center pt-32 pb-16 bg-red"
+        className="h-screen flex justify-center items-center pt-32 pb-20 bg-red"
       >
-        <div className="flex justify-between align-center h-full max-w-screen-xl px-8 w-full gap-10 py-32">
+        <div className="flex justify-between align-center h-full max-w-screen-xl px-8 w-full gap-16">
           <div className="flex-1 h-full flex flex-col justify-between">
             <div>
               <h2 className="text-2xl font-medium mb-4">Різдвяні історії в Саду</h2>
@@ -143,10 +143,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="dates"
-        className="h-screen flex justify-center items-center pt-28 pb-16 bg-white"
-      >
+      <section id="dates" className="h-screen flex justify-center items-center bg-white">
         <div className="max-w-screen-xl px-8 w-full md:flex justify-between items-center">
           <div className="md:w-1/2 mb-4 md:mb-0">
             <h4 className="text-lg font-bold mb-2">Дати проведення:</h4>
@@ -182,7 +179,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="md:w-1/2 p-4">
+          <div className="md:w-1/2">
             <div className="bg-red p-8 shadow-md rounded-md">
               <p className="text-lg font-bold">
                 Просимо звернути увагу, що грудень дуже неочікуваний місяць, тому через погодні
