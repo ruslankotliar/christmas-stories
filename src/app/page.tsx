@@ -1,113 +1,200 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import { christ, roboto } from './fonts';
+import Link from 'next/link';
+import { ExternalLink, Snowflake } from '@/components';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <section id="banner" className="h-screen pt-32 bg-primary relative">
+        <div className="max-w-screen-xl mx-auto h-full py-4 px-8">
+          <div className="absolute z-20 left-0 bottom-32 right-0 mx-auto" id="arrow-scroll-hint">
+            <Link href="#services">
+              <span></span>
+              <span></span>
+              <span></span>
+            </Link>
+          </div>
+          <div className="w-full h-full">
+            <div className={`${christ.className} text-2xl flex justify-center items-center`}>
+              <h1 className="relative">
+                <span>Зимові фотодні у Кловському саду</span>
+                <span className="absolute h-10 w-10 text-gold bottom-1/4 -right-12">
+                  <Snowflake />
+                </span>
+              </h1>
+            </div>
+            <div className="my-10 h-1/2 relative">
+              <Image
+                src={'/images/main-bg.png'}
+                alt="Christmas background image"
+                fill
+                style={{ objectFit: 'cover' }}
+                className="rounded-md shadow-md"
+              />
+            </div>
+            <div>
+              <p className={`${roboto.className} text-base`}>
+                Різдво — надзвичайно світле, тепле свято з глибоким корінням та найулюбленіше свято
+                дорослих та дітей! Цього року Кловський Сад створює неповторну благодійну фотозону
+                «Різдвяні історії», щоб кожен міг закарбувати найгарніші моменти та долучитися до
+                чудової доброї справи. Весь грудень містяни та гості столиці зможуть зробити
+                атмосферні фото на казковому фасаді.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section
+        id="services"
+        className="h-screen bg-white flex justify-center items-center pt-32 pb-16"
+      >
+        <div className="max-w-screen-xl mx-auto px-8 h-full flex flex-col justify-between gap-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 h-full">
+            {[
+              {
+                title: 'Фото на телефон',
+                description:
+                  'У вас є чудова нагода зробити затишні знімки на ваш мобільний телефон впродовж 10 хвилин.',
+                image: '/images/temporary.png'
+              },
+              {
+                title: 'Фото з нашим фотографом',
+                description:
+                  'У вас є чудова нагода зробити неповторні знімки з нашим фотографом впродовж 10 хвилин.',
+                image: '/images/temporary.png'
+              },
+              {
+                title: 'Фото зі своїм фотографом',
+                description:
+                  'У вас є чудова нагода зробити неймовірні знімки з нашим фотографом впродовж 10 хвилин.',
+                image: '/images/temporary.png'
+              }
+            ].map(({ image, title, description }) => (
+              <div
+                key={title}
+                className="bg-white rounded-lg shadow-md text-center flex flex-col justify-between h-full overflow-hidden"
+              >
+                <div className="p-6 h-full relative">
+                  <div className="m-4 h-full">
+                    <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} />
+                  </div>
+                </div>
+                <div className="bg-white px-2 py-4">
+                  <h3 className={`${christ.className} text-xl font-semibold`}>{title}</h3>
+                </div>
+                <div className="bg-primary">
+                  <p className="text-black p-4">{description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="w-full flex justify-center items-center">
+            <button className={`${christ.className} button-86`} role="button">
+              Забронювати місце
+            </button>
+          </div>
+        </div>
+      </section>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <section
+        id="about-us"
+        className="h-screen flex justify-center items-center pt-32 pb-20 bg-red"
+      >
+        <div className="flex justify-between align-center h-full max-w-screen-xl px-8 w-full gap-16">
+          <div className="flex-1 h-full flex flex-col justify-between">
+            <div>
+              <h2 className="text-2xl font-medium mb-4">Різдвяні історії в Саду</h2>
+              <div className="bg-white p-4 rounded-md shadow-md">
+                <p className="text-base">
+                  «Різдвяні історії в Саду» — це наша благодійна ініціатива, весь прибуток з якої
+                  направляється до Gen.Ukrainian — громадська організація, яка профільно займається
+                  ментальною реабілітацією дітей, які зіштовхнулись із жахіттями війни. Команда Gen
+                  проводить психологічні інтенсиви, створює новітні програми реабілітації, веде
+                  наукову діяльність, а також реалізує проєкти, шо покликані покращити ментальне
+                  здоров’я дітей та дорослих. Gen лікує невидимі рани дітей заради нашого спільного
+                  щасливого майбутнього.
+                </p>
+              </div>
+            </div>
+            <div className="w-fit">
+              <Link
+                href={'https://genukrainian.com.ua/en'}
+                target={'_blank'}
+                className="button-27 flex justify-between items-end"
+                role="button"
+              >
+                <span>Gen.Ukrainian</span>
+                <span className="inline-block h-6 w-6 text-gold ml-2">
+                  <ExternalLink />
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="flex-1 w-full h-full relative rounded-lg overflow-hidden">
+            <Image
+              src={'/images/fond.jpg'}
+              fill
+              alt="Fond logo"
+              style={{ objectFit: 'cover', objectPosition: 'top' }}
+            />
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <section id="dates" className="h-screen flex justify-center items-center bg-white">
+        <div className="max-w-screen-xl px-8 w-full md:flex justify-between items-center">
+          <div className="md:w-1/2 mb-4 md:mb-0">
+            <h4 className="text-lg font-bold mb-2">Дати проведення:</h4>
+            <p className="mb-4">6 - 24 грудня</p>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+            <h4 className="text-lg font-bold mb-2">Умови різдвяних фотоднів:</h4>
+            <ul>
+              {[
+                {
+                  description: '300 грн фото на телефон до 10 хв'
+                },
+                {
+                  description: '500 грн фото зі своїм фотографом до 10 хвилин'
+                },
+                {
+                  description:
+                    '1000 грн фото із нашим запрошеним фотографом* до 10 хв (15 кадрів в обробці, віддаються протягом 3х робочих днів)'
+                }
+              ].map(({ description }) => (
+                <li key={description} className="mb-2 flex justify-start items-start gap-2">
+                  <span className="h-5 w-5 text-gold">
+                    <Snowflake />
+                  </span>
+                  <span className="flex-1">{description}</span>
+                </li>
+              ))}
+            </ul>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+            <p className="mt-4">
+              <span className="font-bold">* запрошені фотографи</span> присутні на локації у вихідні
+              дні (субота та неділя) з 10.00 до 15.00 та приймають гостей до зйомки за попереднім
+              записом 🫶
+            </p>
+          </div>
+
+          <div className="md:w-1/2">
+            <div className="bg-red p-8 shadow-md rounded-md">
+              <p className="text-lg font-bold">
+                Просимо звернути увагу, що грудень дуже неочікуваний місяць, тому через погодні
+                умови або будь-які форс-мажорні обставини фотодні можуть бути призупинені або
+                перенесені. Розраховуємо на ваше розуміння та будемо оперативно сповіщати про зміни
+                у нашому інстаграмі ❄️
+              </p>
+
+              <p className="mt-4">
+                Одягайтеся тепло, беріть коханих, гарний настрій та гарячі напої 🫶
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-  )
+  );
 }
