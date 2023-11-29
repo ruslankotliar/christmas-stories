@@ -91,9 +91,13 @@ export default function Home() {
             ))}
           </div>
           <div className="w-full flex justify-center items-center">
-            <button className={`${christ.className} button-86`} role="button">
+            <Link
+              href={'https://forms.gle/3wSGmWZrpKxQxNVs9'}
+              target="_blank"
+              className={`${christ.className} button-86`}
+            >
               Забронювати місце
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -102,7 +106,7 @@ export default function Home() {
         id="about-us"
         className="h-screen flex justify-center items-center pt-32 pb-20 bg-red"
       >
-        <div className="flex justify-between align-center h-full max-w-screen-xl px-8 w-full gap-16">
+        <div className="flex justify-between align-center h-full max-h-[30rem] max-w-screen-xl px-8 w-full gap-16">
           <div className="flex-1 h-full flex flex-col justify-between">
             <div>
               <h2 className="text-2xl font-medium mb-4">Різдвяні історії в Саду</h2>
