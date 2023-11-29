@@ -7,38 +7,41 @@ export default function Home() {
   return (
     <main>
       <section id="banner" className="h-screen pt-32 bg-primary relative">
-        <div className="absolute z-20 left-0 bottom-32 right-0 mx-auto" id="arrow-scroll-hint">
-          <Link href="#services">
-            <span></span>
-            <span></span>
-            <span></span>
-          </Link>
-        </div>
-        <div className="w-full h-full">
-          <div className={`${christ.className} text-2xl w-screen flex justify-center items-center`}>
-            <h1 className="relative">
-              Зимові фотодні у Кловському саду
-              <span className="absolute h-10 w-10 text-gold bottom-1/4 -right-12">
-                <Snowflake />
-              </span>
-            </h1>
+        <div className="max-w-screen-xl mx-auto h-full">
+          <div className="absolute z-20 left-0 bottom-32 right-0 mx-auto" id="arrow-scroll-hint">
+            <Link href="#services">
+              <span></span>
+              <span></span>
+              <span></span>
+            </Link>
           </div>
-          <div className="m-10 h-1/2 relative">
-            <Image
-              src={'/images/main-bg.png'}
-              alt="Christmas background image"
-              fill
-              objectFit="contain"
-            />
-          </div>
-          <div className="max-w-screen-xl mx-auto py-4 px-8">
-            <p className={`${roboto.className} text-base`}>
-              Різдво — надзвичайно світле, тепле свято з глибоким корінням та найулюбленіше свято
-              дорослих та дітей! Цього року Кловський Сад створює неповторну благодійну фотозону
-              «Різдвяні історії», щоб кожен міг закарбувати найгарніші моменти та долучитися до
-              чудової доброї справи. Весь грудень містяни та гості столиці зможуть зробити
-              атмосферні фото на казковому фасаді.
-            </p>
+          <div className="w-full h-full">
+            <div className={`${christ.className} text-2xl flex justify-center items-center`}>
+              <h1 className="relative">
+                <span>Зимові фотодні у Кловському саду</span>
+                <span className="absolute h-10 w-10 text-gold bottom-1/4 -right-12">
+                  <Snowflake />
+                </span>
+              </h1>
+            </div>
+            <div className="m-10 h-1/2 relative">
+              <Image
+                src={'/images/main-bg.png'}
+                alt="Christmas background image"
+                fill
+                style={{ objectFit: 'cover' }}
+                className="rounded-md shadow-md"
+              />
+            </div>
+            <div className="py-4 px-8">
+              <p className={`${roboto.className} text-base`}>
+                Різдво — надзвичайно світле, тепле свято з глибоким корінням та найулюбленіше свято
+                дорослих та дітей! Цього року Кловський Сад створює неповторну благодійну фотозону
+                «Різдвяні історії», щоб кожен міг закарбувати найгарніші моменти та долучитися до
+                чудової доброї справи. Весь грудень містяни та гості столиці зможуть зробити
+                атмосферні фото на казковому фасаді.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -75,7 +78,7 @@ export default function Home() {
               >
                 <div className="p-6 h-full relative">
                   <div className="m-4 h-full">
-                    <Image src={image} alt={title} fill objectFit="cover" />
+                    <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} />
                   </div>
                 </div>
                 <div className="bg-white px-2 py-4">
@@ -134,8 +137,7 @@ export default function Home() {
               src={'/images/fond.jpg'}
               fill
               alt="Fond logo"
-              objectFit="contain"
-              objectPosition="top"
+              style={{ objectFit: 'cover', objectPosition: 'top' }}
             />
           </div>
         </div>
@@ -143,7 +145,7 @@ export default function Home() {
 
       <section
         id="dates"
-        className="h-screen flex justify-center items-center pt-32 pb-16 bg-white"
+        className="h-screen flex justify-center items-center pt-28 pb-16 bg-white"
       >
         <div className="max-w-screen-xl px-8 w-full md:flex justify-between items-center">
           <div className="md:w-1/2 mb-4 md:mb-0">
