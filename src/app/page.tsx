@@ -91,18 +91,23 @@ export default function Home() {
             ))}
           </div>
           <div className="w-full flex justify-center items-center">
-            <button className={`${christ.className} button-86`} role="button">
+            <Link
+              href={''}
+              // href={'https://forms.gle/3wSGmWZrpKxQxNVs9'}
+              target="_blank"
+              className={`${christ.className} button-86`}
+            >
               Забронювати місце
-            </button>
+            </Link>
           </div>
         </div>
       </section>
 
       <section
         id="about-us"
-        className="h-screen flex justify-center items-center pt-32 pb-20 bg-red"
+        className="h-screen flex justify-center items-center pt-32 pb-20 bg-red text-gray-900"
       >
-        <div className="flex justify-between align-center h-full max-w-screen-xl px-8 w-full gap-16">
+        <div className="flex justify-between align-center h-full max-h-[30rem] max-w-screen-xl px-8 w-full gap-16">
           <div className="flex-1 h-full flex flex-col justify-between">
             <div>
               <h2 className="text-2xl font-medium mb-4">Різдвяні історії в Саду</h2>
@@ -143,7 +148,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="dates" className="h-screen flex justify-center items-center bg-white">
+      <section
+        id="dates"
+        className="h-screen flex justify-center items-center bg-white text-gray-900"
+      >
         <div className="max-w-screen-xl px-8 w-full md:flex justify-between items-center">
           <div className="md:w-1/2 mb-4 md:mb-0">
             <h4 className="text-lg font-bold mb-2">Дати проведення:</h4>
