@@ -1,4 +1,4 @@
-const ExternalLink = () => (
+const ExternalLinkIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="100%"
@@ -10,4 +10,4 @@ const ExternalLink = () => (
   </svg>
 );
 
-export { ExternalLink };
+export default ExternalLinkIcon;
