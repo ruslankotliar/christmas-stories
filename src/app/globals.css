@@ -139,6 +139,11 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    padding: 16px 24px;
+  }
 }
 
 .button-86::after,

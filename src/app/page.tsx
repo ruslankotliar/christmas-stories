@@ -1,14 +1,22 @@
 import Image from 'next/image';
-import { christ, roboto } from './fonts';
 import Link from 'next/link';
-import { ExternalLink, Snowflake } from '@/components';
+
+// fonts
+import { christ, roboto } from '@/app/fonts';
+
+// components
+import SnowflakeIcon from '@/components/icons/snowflake';
+import ExternalLinkIcon from '@/components/icons/externalLink';
 
 export default function Home() {
   return (
     <main>
-      <section id="banner" className="h-screen pt-32 bg-primary relative">
+      <section id="banner" className="h-screen pt-20 md:pt-32 bg-primary relative">
         <div className="max-w-screen-xl mx-auto h-full py-4 px-8">
-          <div className="absolute z-20 left-0 bottom-32 right-0 mx-auto" id="arrow-scroll-hint">
+          <div
+            className="absolute z-20 left-0 bottom-24 md:bottom-32 right-0 mx-auto"
+            id="arrow-scroll-hint"
+          >
             <Link href="#services">
               <span></span>
               <span></span>
@@ -16,15 +24,17 @@ export default function Home() {
             </Link>
           </div>
           <div className="w-full h-full">
-            <div className={`${christ.className} text-2xl flex justify-center items-center`}>
-              <h1 className="relative">
+            <div
+              className={`${christ.className} text-xl md:text-2xl flex justify-center items-center`}
+            >
+              <h1 className="flex justify-between items-start gap-2 md:block md:relative">
                 <span>Зимові фотодні у Кловському саду</span>
-                <span className="absolute h-10 w-10 text-gold bottom-1/4 -right-12">
-                  <Snowflake />
+                <span className="md:absolute h-20 w-20 md:h-10 md:w-10 text-gold md:bottom-1/4 md:-right-12">
+                  <SnowflakeIcon />
                 </span>
               </h1>
             </div>
-            <div className="my-10 h-1/2 relative">
+            <div className="my-4 md:my-10 h-1/2 relative">
               <Image
                 src={'/images/main-bg.png'}
                 alt="Christmas background image"
@@ -34,7 +44,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <p className={`${roboto.className} text-base`}>
+              <p className={`${roboto.className} text-sm md:text-base`}>
                 Різдво — надзвичайно світле, тепле свято з глибоким корінням та найулюбленіше свято
                 дорослих та дітей! Цього року Кловський Сад створює неповторну благодійну фотозону
                 «Різдвяні історії», щоб кожен міг закарбувати найгарніші моменти та долучитися до
@@ -48,10 +58,10 @@ export default function Home() {
 
       <section
         id="services"
-        className="h-screen bg-white flex justify-center items-center pt-32 pb-16"
+        className="h-screen bg-white flex justify-center items-center pt-20 md:pt-32 pb-16"
       >
-        <div className="max-w-screen-xl mx-auto px-8 h-full flex flex-col justify-between gap-14">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 h-full">
+        <div className="w-screen max-w-screen-xl mx-auto px-8 h-full flex flex-col justify-between gap-14">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 h-full">
             {[
               {
                 title: 'Фото на телефон',
@@ -74,18 +84,20 @@ export default function Home() {
             ].map(({ image, title, description }) => (
               <div
                 key={title}
-                className="bg-white rounded-lg shadow-md text-center flex flex-col justify-between h-full overflow-hidden"
+                className="bg-white rounded-lg shadow-md text-center flex flex-col justify-between h-fit md:h-full overflow-hidden"
               >
-                <div className="p-6 h-full relative">
+                <div className="hidden md:block p-6 h-full relative">
                   <div className="m-4 h-full">
                     <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} />
                   </div>
                 </div>
                 <div className="bg-white px-2 py-4">
-                  <h3 className={`${christ.className} text-xl font-semibold`}>{title}</h3>
+                  <h3 className={`${christ.className} text-lg md:text-xl font-semibold`}>
+                    {title}
+                  </h3>
                 </div>
                 <div className="bg-primary">
-                  <p className="text-black p-4">{description}</p>
+                  <p className="text-black p-4 text-sm md:text-base">{description}</p>
                 </div>
               </div>
             ))}
@@ -132,7 +144,7 @@ export default function Home() {
               >
                 <span>Gen.Ukrainian</span>
                 <span className="inline-block h-6 w-6 text-gold ml-2">
-                  <ExternalLink />
+                  <ExternalLinkIcon />
                 </span>
               </Link>
             </div>
@@ -173,7 +185,7 @@ export default function Home() {
               ].map(({ description }) => (
                 <li key={description} className="mb-2 flex justify-start items-start gap-2">
                   <span className="h-5 w-5 text-gold">
-                    <Snowflake />
+                    <SnowflakeIcon />
                   </span>
                   <span className="flex-1">{description}</span>
                 </li>

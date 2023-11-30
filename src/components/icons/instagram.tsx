@@ -2,8 +2,8 @@ const InstagramIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 48 48"
-    width="25px"
-    height="25px"
+    width="100%"
+    height="100%"
     fill="currentColor"
   >
     <path
@@ -98,4 +98,4 @@ const InstagramIcon = () => (
   </svg>
 );
 
-export { InstagramIcon };
+export default InstagramIcon;

@@ -1,4 +1,4 @@
-const Snowflake = () => (
+const SnowflakeIcon = () => (
   <svg
     fill="currentColor"
     height="100%"
@@ -51,4 +51,4 @@ const Snowflake = () => (
   </svg>
 );
 
-export { Snowflake };
+export default SnowflakeIcon;
