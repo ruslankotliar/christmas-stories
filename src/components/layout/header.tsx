@@ -7,7 +7,7 @@ import { ICONS, NAV_ITEMS } from '@/constants';
 import BurgerMenu from '@/components/misc/burgerMenu';
 
 const Header = () => (
-  <header className="fixed top-0 left-0 w-screen z-50">
+  <header className="fixed top-0 left-0 w-screen z-50 text-black">
     <nav className="bg-accent transp border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-8">
         <Link href="#banner" className="flex items-center space-x-3 rtl:space-x-reverse">
