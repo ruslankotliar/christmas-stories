@@ -10,7 +10,7 @@ import ExternalLinkIcon from '@/components/icons/externalLink';
 
 export default function Home() {
   return (
-    <main>
+    <main className="text-black">
       <section id="banner" className="h-screen pt-20 md:pt-32 bg-primary relative">
         <div className="max-w-screen-xl mx-auto h-full px-8">
           <div
@@ -69,24 +69,24 @@ export default function Home() {
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 h-full">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 h-full">
             {[
               {
                 title: 'Фото на телефон',
                 description:
-                  'У вас є чудова нагода зробити затишні знімки на ваш мобільний телефон впродовж 10 хвилин.',
+                  'У вас є чудова нагода зробити затишні знімки на ваш мобільний телефон до 10 хвилин.',
                 image: '/images/temporary.png'
               },
               {
                 title: 'Фото з нашим фотографом',
                 description:
-                  'У вас є чудова нагода зробити неповторні знімки з нашим фотографом впродовж 10 хвилин.',
+                  'У вас є чудова нагода зробити неповторні знімки з нашим фотографом до 10 хвилин.',
                 image: '/images/temporary.png'
               },
               {
                 title: 'Фото зі своїм фотографом',
                 description:
-                  'У вас є чудова нагода зробити неймовірні знімки з нашим фотографом впродовж 10 хвилин.',
+                  'У вас є чудова нагода зробити неймовірні знімки з нашим фотографом до 10 хвилин.',
                 image: '/images/temporary.png'
               }
             ].map(({ image, title, description }) => (
@@ -111,7 +111,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="w-full flex justify-center items-center">
+          <div className="w-full flex justify-center items-center mb-5">
             <Link
               href={'https://forms.gle/3wSGmWZrpKxQxNVs9'}
               target="_blank"
@@ -127,8 +127,8 @@ export default function Home() {
         id="about-us"
         className="h-screen flex justify-center items-center pt-20 md:pt-32 pb-10 md:pb-16 bg-primary"
       >
-        <div className="flex flex-col md:flex-row justify-between align-center h-full md:max-h-[30rem] max-w-screen-xl px-8 w-full gap-10 md:gap-16">
-          <div className="flex-1 h-full flex flex-col justify-between">
+        <div className="flex flex-col md:flex-row justify-start md:justify-between items-center h-full md:max-h-[30rem] max-w-screen-xl px-8 w-full gap-10 md:gap-16">
+          <div className="flex flex-col justify-between">
             <div>
               <h2 className="text-2xl font-medium mb-2 md:mb-4">Різдвяні історії в Саду</h2>
               <div className="bg-white p-4 rounded-md shadow-md">
@@ -165,7 +165,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex-1 w-full h-full relative rounded-lg overflow-hidden">
+          <div className="w-full h-full relative rounded-lg overflow-hidden">
             <Image
               src={'/images/fond.jpg'}
               fill
