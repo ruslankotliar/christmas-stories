@@ -17,6 +17,7 @@
 }
 
 body {
+  color: #22d3ee8d;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
       transparent,
@@ -30,8 +31,8 @@ body {
   width: 24px;
   height: 24px;
   margin-left: -12px;
-  border-left: 1px solid #FFD700;
-  border-bottom: 1px solid #FFD700;
+  border-left: 1px solid #22d3ee;
+  border-bottom: 1px solid #22d3ee;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   -webkit-animation: sdb07 2s infinite;
@@ -128,7 +129,7 @@ body {
   background: transparent;
   border: none;
   position: relative;
-  color: #FFD700;
+  color: black;
   cursor: pointer;
   z-index: 1;
   padding: 22px 34px;
@@ -160,7 +161,7 @@ body {
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
-  background: #28282d;
+  background: #22d3ee;
   border-radius: 10px;
 }
 

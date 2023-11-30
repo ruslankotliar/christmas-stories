@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 import { CSSProperties, useState } from 'react';
 import Link from 'next/link';
 import { ICONS, NAV_ITEMS } from '@/constants';
+import { christ } from '@/app/fonts';
 
 const BurgerMenu = function () {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,10 +32,10 @@ const BurgerMenu = function () {
                   className="flex justify-between items-center gap-2 text-2xl text-center"
                 >
                   <div className="flex justify-between items-center gap-3">
-                    <span className="h-10 w-10 text-red">
+                    <span className="h-10 w-10 text-blue">
                       {ICONS[iconKey as keyof typeof ICONS]}
                     </span>
-                    <span>{name}</span>
+                    <span className={`${christ.className}`}>{name}</span>
                   </div>
                 </Link>
               </li>
@@ -45,7 +46,7 @@ const BurgerMenu = function () {
 
       <div
         onClick={handleSetOpen}
-        className={`flex items-center justify-center ${isOpen ? 'text-red' : 'text-black'}`}
+        className={`flex items-center justify-center ${isOpen ? 'text-blue' : 'text-black'}`}
       >
         <input
           checked={isOpen}
@@ -53,7 +54,7 @@ const BurgerMenu = function () {
           type="checkbox"
           role="button"
           aria-label="Display the menu"
-          style={{ '--c': isOpen ? '#FF5757' : 'black' } as CSSProperties}
+          style={{ '--c': isOpen ? '#22d3ee' : 'black' } as CSSProperties}
           className={styles['menu']}
         />
       </div>
