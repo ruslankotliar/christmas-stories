@@ -27,9 +27,9 @@ export default function Home() {
             <div
               className={`${christ.className} text-xl md:text-2xl flex justify-center items-center`}
             >
-              <h1 className="flex justify-between items-start gap-2 md:block md:relative">
-                <span>Зимові фотодні у Кловському саду</span>
-                <span className="md:absolute h-20 w-20 md:h-10 md:w-10 text-blue md:bottom-1/4 md:-right-12">
+              <h1 className="flex justify-between items-start md:gap-2 md:block md:relative">
+                <span className="text-center uppercase">Різдвяні історії у Кловському Саду</span>
+                <span className="md:absolute h-10 w-20 md:h-10 md:w-10 text-blue md:bottom-1/4 md:-right-12">
                   <SnowflakeIcon />
                 </span>
               </h1>
@@ -58,7 +58,7 @@ export default function Home() {
 
       <section
         id="services"
-        className="h-screen bg-white flex justify-center items-center pt-20 md:pt-32 pb-10 md:pb-16"
+        className="h-screen bg-white flex justify-center items-center pt-6 md:pt-32 pb-10 md:pb-16"
       >
         <div className="w-screen max-w-screen-xl mx-auto px-8 h-full flex flex-col justify-between gap-10 md:gap-14">
           <div className="block md:hidden h-full relative rounded-md shadow-sm overflow-hidden">
@@ -99,12 +99,12 @@ export default function Home() {
                     <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} />
                   </div>
                 </div>
-                <div className="bg-white px-2 py-2 md:py-4">
-                  <h3 className={`${christ.className} text-lg md:text-xl font-semibold`}>
+                <div className="bg-white px-2 py-2 md:py-4 md:min-h-[104px] flex items-center justify-center">
+                  <h3 className={`${christ.className} text-lg md:text-xl font-semibold uppercase`}>
                     {title}
                   </h3>
                 </div>
-                <hr className="my-1 mx-3 h-[0.5px] md:h-0.5 border-t-0 bg-accent opacity-100 dark:opacity-50" />
+                <hr className="md:my-1 mx-3 h-[0.5px] md:h-0.5 border-t-0 bg-accent opacity-100 dark:opacity-50" />
                 <div className="bg-primary">
                   <p className="text-black p-2 md:p-4 text-sm md:text-base">{description}</p>
                 </div>
@@ -113,8 +113,10 @@ export default function Home() {
           </div>
           <div className="w-full flex justify-center items-center mb-5">
             <Link
-              href={'https://forms.gle/3wSGmWZrpKxQxNVs9'}
-              target="_blank"
+              href={'#calendar'}
+              // href={'https://calendar.app.google/9R3ySGQoUvdwVJsq9'}
+              // href={'https://forms.gle/3wSGmWZrpKxQxNVs9'}
+              // target="_blank"
               className={`${christ.className} button-86`}
             >
               Забронювати місце
@@ -177,7 +179,7 @@ export default function Home() {
       </section>
 
       <section
-        id="dates"
+        id="prices"
         className="h-screen flex justify-center items-center bg-white pt-20 md:pt-32 pb-10 md:pb-16"
       >
         <div className="max-w-screen-xl px-8 w-full flex flex-col md:flex-row justify-start md:justify-between items-center h-full gap-5 md:gap-10">
@@ -234,6 +236,20 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="calendar"
+        className="h-screen flex justify-center items-center bg-white pt-20 md:pt-32 pb-10 md:pb-16"
+      >
+        <div className="max-w-screen-xl w-full h-full">
+          <iframe
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dilqw_bIL00wQaPuyW8NSIj6ezdiPPLKcRW1FZ3A0u2Va6cSbUJBEBE-UwZaXr09UOspvcPjJ?gv=true"
+            style={{ border: 0 }}
+            width="100%"
+            height="100%"
+          ></iframe>
         </div>
       </section>
     </main>
