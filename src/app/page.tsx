@@ -113,8 +113,10 @@ export default function Home() {
           </div>
           <div className="w-full flex justify-center items-center mb-5">
             <Link
-              href={'https://forms.gle/3wSGmWZrpKxQxNVs9'}
-              target="_blank"
+              href={'#calendar'}
+              // href={'https://calendar.app.google/9R3ySGQoUvdwVJsq9'}
+              // href={'https://forms.gle/3wSGmWZrpKxQxNVs9'}
+              // target="_blank"
               className={`${christ.className} button-86`}
             >
               Забронювати місце
@@ -177,7 +179,7 @@ export default function Home() {
       </section>
 
       <section
-        id="dates"
+        id="prices"
         className="h-screen flex justify-center items-center bg-white pt-20 md:pt-32 pb-10 md:pb-16"
       >
         <div className="max-w-screen-xl px-8 w-full flex flex-col md:flex-row justify-start md:justify-between items-center h-full gap-5 md:gap-10">
@@ -234,6 +236,20 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="calendar"
+        className="h-screen flex justify-center items-center bg-white pt-20 md:pt-32 pb-10 md:pb-16"
+      >
+        <div className="max-w-screen-xl w-full h-full">
+          <iframe
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dilqw_bIL00wQaPuyW8NSIj6ezdiPPLKcRW1FZ3A0u2Va6cSbUJBEBE-UwZaXr09UOspvcPjJ?gv=true"
+            style={{ border: 0 }}
+            width="100%"
+            height="100%"
+          ></iframe>
         </div>
       </section>
     </main>
