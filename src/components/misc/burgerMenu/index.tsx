@@ -1,11 +1,10 @@
 'use client';
 
 import styles from './styles.module.css';
-
 import { CSSProperties, useState } from 'react';
+
 import Link from 'next/link';
 import { ICONS, NAV_ITEMS } from '@/constants';
-import { christ } from '@/app/fonts';
 
 const BurgerMenu = function () {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +14,7 @@ const BurgerMenu = function () {
   return (
     <>
       <div
-        className={`flex items-center justify-center absolute right-0 top-0 bg-white transform transition-all duration-500 origin-top-right overflow-hidden ${
+        className={`bg-beige flex items-center justify-center absolute right-0 top-0 transform transition-all duration-500 origin-top-right overflow-hidden ${
           isOpen
             ? 'translate-x-0 translate-y-0 h-screen w-screen opacity-1'
             : 'translate-x-full -translate-y-full h-0 w-0 opacity-0'
@@ -32,10 +31,10 @@ const BurgerMenu = function () {
                   className="flex justify-between items-center gap-2 text-2xl text-center"
                 >
                   <div className="flex justify-between items-center gap-3">
-                    <span className="h-10 w-10 text-blue">
+                    <span className="h-10 w-10 text-green">
                       {ICONS[iconKey as keyof typeof ICONS]}
                     </span>
-                    <span className={`${christ.className}`}>{name}</span>
+                    <span>{name}</span>
                   </div>
                 </Link>
               </li>
@@ -46,7 +45,7 @@ const BurgerMenu = function () {
 
       <div
         onClick={handleSetOpen}
-        className={`flex items-center justify-center ${isOpen ? 'text-blue' : 'text-black'}`}
+        className={`flex items-center justify-center ${isOpen ? 'text-green' : 'text-black'}`}
       >
         <input
           checked={isOpen}
@@ -54,7 +53,7 @@ const BurgerMenu = function () {
           type="checkbox"
           role="button"
           aria-label="Display the menu"
-          style={{ '--c': isOpen ? '#22d3ee' : 'black' } as CSSProperties}
+          style={{ '--c': isOpen ? '#6a994e' : 'black' } as CSSProperties}
           className={styles['menu']}
         />
       </div>

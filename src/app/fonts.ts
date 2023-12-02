@@ -1,16 +1,10 @@
-import { Roboto } from 'next/font/google';
-import localFont from 'next/font/local';
+import { Lato } from 'next/font/google';
 
-const roboto = Roboto({
-  weight: ['400', '500', '700'],
+const lato = Lato({
+  weight: ['100', '300', '400', '700', '900'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
   display: 'swap'
 });
 
-const christ = localFont({
-  src: '../../public/fonts/christ.ttf',
-  display: 'swap'
-});
-
-export { christ, roboto };
+export { lato };
