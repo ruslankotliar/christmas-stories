@@ -9,18 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        red: '#FF5757',
-        green: '#3DB490',
-        blue: '#22d3ee',
-        silver: '#C0C0C0',
-        white: '#FFFFFF',
-        text: '#E5E5E5'
+        red: '#bc4749',
+        green: '#6a994e',
+        darkGreen: '#386641',
+        beige: '#f2e8cf'
       },
       backgroundColor: {
-        primary: 'white', // Background color for main content (Red)
-        secondary: '#3DB490', // Background color for secondary elements (Green)
-        accent: '#22d3ee', // Accent color for special elements (Gold)
-        header: '#22d3ee8d'
+        red: '#bc4749',
+        green: '#6a994e',
+        beige: '#f2e8cf',
+        darkGreen: '#386641'
       },
       fontSize: {
         sm: '0.875rem',

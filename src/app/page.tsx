@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // fonts
-import { christ, roboto } from '@/app/fonts';
 
 // components
 import SnowflakeIcon from '@/components/icons/snowflake';
@@ -10,8 +9,8 @@ import ExternalLinkIcon from '@/components/icons/externalLink';
 
 export default function Home() {
   return (
-    <main className="text-black">
-      <section id="banner" className="h-screen pt-20 md:pt-32 bg-primary relative">
+    <main className="text-black bg-beige">
+      <section id="banner" className="h-screen pt-20 md:pt-32 relative">
         <div className="max-w-screen-xl mx-auto h-full px-8">
           <div
             className="absolute z-20 left-0 bottom-24 md:bottom-28 right-0 mx-auto"
@@ -24,15 +23,16 @@ export default function Home() {
             </Link>
           </div>
           <div className="w-full h-full">
-            <div
-              className={`${christ.className} text-xl md:text-2xl flex justify-center items-center`}
-            >
-              <h1 className="flex justify-between items-start md:gap-2 md:block md:relative">
-                <span className="text-center uppercase">Різдвяні історії у Кловському Саду</span>
-                <span className="md:absolute h-10 w-20 md:h-10 md:w-10 text-blue md:bottom-1/4 md:-right-12">
+            <div className={`flex flex-col justify-center items-center`}>
+              <h1 className="text-xl md:text-2xl flex justify-between items-start md:gap-2 md:block md:relative">
+                <span className="text-center text-darkGreen">РІЗДВЯНІ ІСТОРІЇ Кловського саду</span>
+                <span className="md:absolute h-10 w-20 md:h-10 md:w-10 text-green md:bottom-1/4 md:-right-12">
                   <SnowflakeIcon />
                 </span>
               </h1>
+              <div>
+                <p className="text-sm md:text-base">6 - 24 грудня</p>
+              </div>
             </div>
             <div className="my-4 md:my-10 h-1/2 relative">
               <Image
@@ -44,7 +44,7 @@ export default function Home() {
               />
             </div>
             <div>
-              <p className={`${roboto.className} text-sm md:text-base`}>
+              <p className={`text-sm md:text-base`}>
                 Різдво — надзвичайно світле, тепле свято з глибоким корінням та найулюбленіше свято
                 дорослих та дітей! Цього року Кловський Сад створює неповторну благодійну фотозону
                 «Різдвяні історії», щоб кожен міг закарбувати найгарніші моменти та долучитися до
@@ -58,7 +58,7 @@ export default function Home() {
 
       <section
         id="services"
-        className="h-screen bg-white flex justify-center items-center pt-6 md:pt-32 pb-10 md:pb-16"
+        className="h-screen flex justify-center items-center pt-20 md:pt-32 pb-10 md:pb-16"
       >
         <div className="w-screen max-w-screen-xl mx-auto px-8 h-full flex flex-col justify-between gap-10 md:gap-14">
           <div className="block md:hidden h-full relative rounded-md shadow-sm overflow-hidden">
@@ -73,40 +73,49 @@ export default function Home() {
             {[
               {
                 title: 'Фото на телефон',
+                price: '300',
                 description:
                   'У вас є чудова нагода зробити затишні знімки на ваш мобільний телефон до 10 хвилин.',
                 image: '/images/temporary.png'
               },
               {
-                title: 'Фото з нашим фотографом',
+                title: 'Фото зі своїм фотографом',
+                price: '500',
                 description:
-                  'У вас є чудова нагода зробити неповторні знімки з нашим фотографом до 10 хвилин.',
+                  'У вас є чудова нагода зробити неймовірні знімки зі своїм фотографом до 10 хвилин.',
                 image: '/images/temporary.png'
               },
               {
-                title: 'Фото зі своїм фотографом',
+                title: 'Фото з нашим фотографом',
+                price: '1000',
                 description:
-                  'У вас є чудова нагода зробити неймовірні знімки з нашим фотографом до 10 хвилин.',
+                  'У вас є чудова нагода зробити неповторні знімки з нашим фотографом до 10 хвилин.',
                 image: '/images/temporary.png'
               }
-            ].map(({ image, title, description }) => (
+            ].map(({ image, title, description, price }) => (
               <div
                 key={title}
-                className="bg-white rounded-lg shadow-md text-center flex flex-col justify-between h-fit md:h-full overflow-hidden"
+                className="rounded-lg shadow-md text-center flex flex-col justify-between h-fit md:h-full overflow-hidden"
               >
                 <div className="hidden md:block p-6 h-full relative">
                   <div className="m-4 h-full">
                     <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} />
                   </div>
                 </div>
-                <div className="bg-white px-2 py-2 md:py-4 md:min-h-[104px] flex items-center justify-center">
-                  <h3 className={`${christ.className} text-lg md:text-xl font-semibold uppercase`}>
-                    {title}
-                  </h3>
+                <div className="px-2 py-2 md:py-4 md:min-h-[104px] xl:min-h-0 flex items-center justify-center">
+                  <h3 className={`text-lg md:text-xl font-semibold uppercase`}>{title}</h3>
                 </div>
-                <hr className="md:my-1 mx-3 h-[0.5px] md:h-0.5 border-t-0 bg-accent opacity-100 dark:opacity-50" />
-                <div className="bg-primary">
-                  <p className="text-black p-2 md:p-4 text-sm md:text-base">{description}</p>
+                <hr className="md:my-1 mx-3 h-[0.5px] md:h-0.5 border-t-0 bg-green opacity-100 dark:opacity-50" />
+                <div>
+                  <p className="text-black px-2 md:px-4 py-1  md:p-3 text-sm md:text-base">
+                    {description}
+                  </p>
+                </div>
+                <hr className="md:my-1 mx-10 h-[0.25px] md:h-[0.5px] border-t-0 bg-green opacity-100 dark:opacity-50" />
+                <div>
+                  <h5 className="text-black font-semibold py-1 md:py-2 text-sm md:text-base">
+                    {price} <span className="font-normal">грн</span>
+                  </h5>
                 </div>
               </div>
             ))}
@@ -117,7 +126,7 @@ export default function Home() {
               // href={'https://calendar.app.google/9R3ySGQoUvdwVJsq9'}
               // href={'https://forms.gle/3wSGmWZrpKxQxNVs9'}
               // target="_blank"
-              className={`${christ.className} button-86`}
+              className={`button-86`}
             >
               Забронювати місце
             </Link>
@@ -127,13 +136,15 @@ export default function Home() {
 
       <section
         id="about-us"
-        className="h-screen flex justify-center items-center pt-20 md:pt-32 pb-10 md:pb-16 bg-primary"
+        className="h-screen flex justify-center items-center pt-20 md:pt-32 pb-10 md:pb-16"
       >
         <div className="flex flex-col md:flex-row justify-start md:justify-between items-center h-full md:max-h-[30rem] max-w-screen-xl px-8 w-full gap-10 md:gap-16">
-          <div className="flex flex-col justify-between">
+          <div className="flex md:flex-1 flex-col md:h-full justify-between">
             <div>
-              <h2 className="text-2xl font-medium mb-2 md:mb-4">Різдвяні історії в Саду</h2>
-              <div className="bg-white p-4 rounded-md shadow-md">
+              <h2 className="text-2xl font-medium mb-2 md:mb-4 text-darkGreen">
+                Різдвяні історії в Саду
+              </h2>
+              <div className="p-4 rounded-md shadow-md bg-green">
                 <p className="text-sm md:text-base">
                   «Різдвяні історії в Саду» — це наша благодійна ініціатива, весь прибуток з якої
                   направляється до{' '}
@@ -141,7 +152,7 @@ export default function Home() {
                     href={'https://genukrainian.com.ua/en'}
                     target={'_blank'}
                     role="button"
-                    className="text-blue underline"
+                    className="text-white underline"
                   >
                     Gen.Ukrainian
                   </Link>{' '}
@@ -161,13 +172,13 @@ export default function Home() {
                 role="button"
               >
                 <span>Gen.Ukrainian</span>
-                <span className="inline-block h-6 w-6 text-blue ml-2">
+                <span className="inline-block h-6 w-6 text-green ml-2">
                   <ExternalLinkIcon />
                 </span>
               </Link>
             </div>
           </div>
-          <div className="w-full h-full relative rounded-lg overflow-hidden">
+          <div className="w-full md:flex-1 h-full relative rounded-lg overflow-hidden">
             <Image
               src={'/images/fond.jpg'}
               fill
@@ -180,13 +191,10 @@ export default function Home() {
 
       <section
         id="prices"
-        className="h-screen flex justify-center items-center bg-white pt-20 md:pt-32 pb-10 md:pb-16"
+        className="h-screen flex justify-center items-center pt-20 md:pt-32 pb-10 md:pb-16"
       >
         <div className="max-w-screen-xl px-8 w-full flex flex-col md:flex-row justify-start md:justify-between items-center h-full gap-5 md:gap-10">
           <div className="md:w-1/2 mb-4 md:mb-0">
-            <h4 className="text-base md:text-lg font-bold mb-1 md:mb-2">Дати проведення:</h4>
-            <p className="mb-4">6 - 24 грудня</p>
-
             <h4 className="text-base md:text-lg font-bold mb-1 md:mb-2">
               Умови різдвяних фотоднів:
             </h4>
@@ -207,7 +215,7 @@ export default function Home() {
                   key={description}
                   className="mb-1 md:mb-2 flex justify-start items-start gap-1 md:gap-2"
                 >
-                  <span className="w-4 h-4 md:h-5 md:w-5 text-blue">
+                  <span className="w-4 h-4 md:h-5 md:w-5 text-green">
                     <SnowflakeIcon />
                   </span>
                   <span className="flex-1 text-sm md:text-base">{description}</span>
@@ -223,7 +231,7 @@ export default function Home() {
           </div>
 
           <div className="md:w-1/2">
-            <div className="bg-primary p-4 md:p-8 shadow-md rounded-md">
+            <div className="p-4 md:p-8 shadow-md rounded-md bg-green">
               <p className="text-base md:text-lg font-bold">
                 Просимо звернути увагу, що грудень дуже неочікуваний місяць, тому через погодні
                 умови або будь-які форс-мажорні обставини фотодні можуть бути призупинені або
@@ -241,7 +249,7 @@ export default function Home() {
 
       <section
         id="calendar"
-        className="h-screen flex justify-center items-center bg-white pt-20 md:pt-32 pb-10 md:pb-16"
+        className="h-screen flex justify-center items-cente pt-20 md:pt-32 pb-10 md:pb-16 bg-white"
       >
         <div className="max-w-screen-xl w-full h-full">
           <iframe
