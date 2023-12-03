@@ -18,13 +18,6 @@ const NAV_ITEMS = [
     iconMobileOnly: true
   },
   {
-    name: 'Бронювання',
-    href: '#calendar',
-    newTab: false,
-    iconKey: 'calendar',
-    iconMobileOnly: true
-  },
-  {
     name: 'klovskysad',
     href: 'https://www.instagram.com/klovskysad/',
     newTab: true,
