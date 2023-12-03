@@ -7,8 +7,8 @@ import BurgerMenu from '@/components/misc/burgerMenu';
 import Image from 'next/image';
 
 const Header = () => (
-  <header className="fixed top-0 left-0 w-screen z-50 text-black">
-    <nav className="bg-green transp border-gray-200">
+  <header className="fixed top-0 left-0 w-screen z-30 text-black">
+    <nav className="bg-green bg-opacity-75 border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-2 px-8">
         <Link href="#banner" className="flex items-center space-x-3 rtl:space-x-reverse">
           <div className="h-10 w-10 relative">
