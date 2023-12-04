@@ -14,7 +14,7 @@ const BurgerMenu = function () {
   return (
     <>
       <div
-        className={`bg-beige flex items-center justify-center absolute right-0 top-0 transform transition-all duration-500 origin-top-right overflow-hidden ${
+        className={`bg-white flex items-center justify-center absolute right-0 top-0 transform transition-all duration-500 origin-top-right overflow-hidden ${
           isOpen
             ? 'translate-x-0 translate-y-0 h-screen w-screen opacity-1'
             : 'translate-x-full -translate-y-full h-0 w-0 opacity-0'

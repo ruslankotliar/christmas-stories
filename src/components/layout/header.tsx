@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { ICONS, NAV_ITEMS } from '@/constants';
 
 // components
-import BurgerMenu from '@/components/misc/burgerMenu';
+import BurgerMenu from '@/components/buttons/burger';
 import Image from 'next/image';
 
 const Header = () => (
-  <header className="fixed top-0 left-0 w-screen z-30 text-black">
-    <nav className="bg-green bg-opacity-75 border-gray-200">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-2 px-8">
+  <header className="fixed z-40 top-0 left-0 w-screen text-black">
+    <nav className="bg-transparent border-gray-200 relative">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-2 px-12">
         <Link href="#banner" className="flex items-center space-x-3 rtl:space-x-reverse">
           <div className="h-10 w-10 relative">
             <Image
@@ -29,7 +29,7 @@ const Header = () => (
           <BurgerMenu />
         </div>
         <div className="hidden w-full md:block md:w-auto">
-          <ul className="font-medium flex flex-col px-8 py-2 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-beige">
+          <ul className="font-medium flex flex-col px-12 py-2 border border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-white">
             {NAV_ITEMS.map(({ name, href, newTab, iconKey, iconMobileOnly }) => (
               <li key={name}>
                 <a
