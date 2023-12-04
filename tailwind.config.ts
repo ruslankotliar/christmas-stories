@@ -25,7 +25,8 @@ const config: Config = {
         base: '1rem',
         lg: '1.25rem',
         xl: '1.5rem',
-        '2xl': '2rem'
+        '2xl': '2rem',
+        '3xl': '2.75rem'
       },
       spacing: {
         xl: '1.75rem'
