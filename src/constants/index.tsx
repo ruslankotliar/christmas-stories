@@ -44,7 +44,9 @@ const ICONS: Record<string, ReactNode> = {
 };
 
 const LINKS = {
-  MONOBANK: 'https://send.monobank.ua/jar/9iSLe8DkdV'
+  MONOBANK: 'https://send.monobank.ua/jar/9iSLe8DkdV',
+  GOOGLE_CALENDAR:
+    'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dilqw_bIL00wQaPuyW8NSIj6ezdiPPLKcRW1FZ3A0u2Va6cSbUJBEBE-UwZaXr09UOspvcPjJ?gv=true'
 };
 
 export { NAV_ITEMS, ICONS, LINKS };

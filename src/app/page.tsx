@@ -1,19 +1,19 @@
 'use client';
 
-import { FC, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 // components
 // icons
 import ExternalLinkIcon from '@/components/icons/externalLink';
-import CloseIcon from '@/components/icons/closeIcon';
 // buttons
 import ScrollButton from '@/components/buttons/scroll';
 
 // constants
-import { LINKS } from '@/constants';
 import PhoneIcon from '@/components/icons/phoneIcon';
+import PaymentButton from '@/components/buttons/payment';
+import PaymentModal from '@/components/modals/calendar';
 
 export default function Home() {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState<boolean>(false);
@@ -39,7 +39,7 @@ export default function Home() {
         setIsPaymentModalOpen={setIsPaymentModalOpen}
       />
       <div className="z-10">
-        <section id="banner" className="h-screen pt-36 md:pt-40 relative pb-32">
+        <section id="banner" className="h-screen pt-36 md:pt-40 relative pb-10">
           <div className="max-w-screen-xl mx-auto h-full">
             <ScrollButton href="#description" />
             <div className="w-full h-full flex flex-col items-center justify-start">
@@ -47,7 +47,7 @@ export default function Home() {
                 <div className="uppercase flex flex-col justify-between items-center text-xl md:text-2xl">
                   <h1 className="font-bold text-red text-2xl md:text-3xl">РІЗДВЯНІ ІСТОРІЇ</h1>
                   <div className="flex flex-col items-center">
-                    <h2 className="text-black -mt-2">Кловського саду</h2>
+                    <h2 className="text-black -mt-2">Кловського Саду</h2>
                     <hr className="w-full md:my-1 mx-3 h-[1px] border-t-0 bg-black -mt-[0.5px] md:-mt-[0.75px]" />
                   </div>
                 </div>
@@ -76,13 +76,13 @@ export default function Home() {
 
         <section
           id="description"
-          className="h-screen flex justify-center items-center pt-24 md:pt-32 pb-14 md:pb-16"
+          className="h-screen flex justify-center items-center pt-24 md:pt-32 pb-5 md:pb-10"
         >
           <div className="w-screen max-w-screen-xl mx-auto h-full flex flex-col justify-between gap-5 md:gap-10">
             <div className="flex flex-col justify-between gap-4 text-base md:text-lg text-center">
               <div className="flex flex-col justify-between gap-1">
-                <p>Цього року Кловський сад створює неповторну благодійну фотозону</p>
-                <strong className="text-red font-black">« РІЗДВЯНІ ІСТОРЇ »</strong>
+                <p>Цього року Кловський Сад створює неповторну благодійну фотозону</p>
+                <strong className="text-red font-black uppercase">« РІЗДВЯНІ ІСТОРІЇ »</strong>
                 <p>
                   щоб кожен міг закарбувати найгарніші моменти та долучитися до чудової доброї
                   справи.
@@ -107,7 +107,7 @@ export default function Home() {
 
         <section
           id="services"
-          className="h-screen flex justify-center items-center pt-32 md:pt-32 pb-12 md:pb-16"
+          className="h-fit flex justify-center items-center pt-32 md:pt-32 pb-2 md:pb-16"
         >
           <div className="w-screen max-w-screen-xl mx-auto h-full flex flex-col justify-start gap-16 md:gap-14">
             <div className="flex flex-col md:flex-row gap-10 md:gap-10 h-fit md:h-full">
@@ -136,17 +136,17 @@ export default function Home() {
               ].map(({ image, title, description, price }) => (
                 <div
                   key={title}
-                  className="rounded-lg shadow-md text-center flex flex-col justify-between items-center h-fit md:h-full overflow-hidden bg-green"
+                  className="rounded-lg shadow-md text-center flex flex-col justify-between items-center h-fit md:h-full overflow-hidden bg-lightGreen"
                 >
                   <div className="hidden md:block p-6 h-full w-full relative">
                     <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} />
                   </div>
-                  <div className="px-2 py-2 md:py-4 flex flex-col items-center justify-between w-fit">
+                  <div className="px-2 py-2 md:py-4 flex flex-col items-center justify-end w-fit md:min-h-[114px]">
                     <h3 className={`text-lg md:text-xl font-black uppercase`}>{title}</h3>
                     <hr className="w-full md:my-1 mx-3 h-[1px] md:h-0.5 border-t-0 bg-black opacity-100 dark:opacity-50" />
                   </div>
                   <div>
-                    <p className="text-black px-2 md:px-4 py-1  md:p-3 text-sm md:text-base">
+                    <p className="text-black px-2 md:px-4 py-1 md:p-3 text-sm md:text-base">
                       {description}
                     </p>
                   </div>
@@ -159,26 +159,19 @@ export default function Home() {
               ))}
             </div>
             <div className="flex justify-center items-center">
-              <Link
-                href={LINKS.MONOBANK}
-                target="_blank"
-                className={`button-86`}
-                onClick={() => setIsPaymentModalOpen(true)}
-              >
-                Забронювати місце
-              </Link>
+              <PaymentButton onClick={() => setIsPaymentModalOpen(true)} />
             </div>
           </div>
         </section>
 
         <section
           id="about-us"
-          className="h-screen flex justify-center items-center pt-28 md:pt-32 pb-12 md:pb-16"
+          className="h-fit flex justify-center items-center pt-28 md:pt-32 pb-12 md:pb-16"
         >
           <div className="flex flex-col md:flex-row justify-start md:justify-between items-center h-full md:max-h-[35rem] max-w-screen-xl w-full gap-10 md:gap-16">
             <div className="flex md:flex-1 flex-col h-full justify-between overflow-hidden">
               <div className="h-full rounded-md md:rounded-none shadow-md md:shadow-none overflow-hidden md:overflow-auto">
-                <div className="p-8 md:py-8 md:px-12 md:rounded-md md:shadow-md bg-green">
+                <div className="p-4 md:py-8 md:px-12 md:rounded-md md:shadow-md bg-beige">
                   <div className="uppercase flex flex-col justify-between items-center text-lg md:text-xl mb-2">
                     <div className="flex items-center">
                       <span>«</span>
@@ -186,7 +179,7 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col items-center -mt-1">
                       <div className="flex items-center">
-                        <h2 className="text-black">Кловського саду</h2>
+                        <h2 className="text-black">Кловського Саду</h2>
                         <span className="-mt-2">»</span>
                       </div>
                       <hr className="w-full md:my-1 mx-3 h-[1px] border-t-0 bg-black -mt-[0.5px] md:-mt-[0.75px]" />
@@ -227,7 +220,7 @@ export default function Home() {
                     лікує неведимі рани дітей заради нашого спільного щасливого майбутнього.
                   </p>
                 </div>
-                <div className="md:hidden w-full h-full relative">
+                <div className="md:hidden w-full h-full min-h-[25vh] relative">
                   <Image
                     src={'/images/fond.jpg'}
                     fill
@@ -263,7 +256,7 @@ export default function Home() {
 
         <section
           id="prices"
-          className="h-screen flex flex-col justify-center items-center pt-20 md:pt-32 pb-16 md:pb-32 overflow-hidden relative"
+          className="h-fit flex flex-col justify-center gap-10 items-center pt-20 md:pt-32 pb-24 md:pb-52"
         >
           <div className="w-full flex flex-col md:flex-row justify-start md:justify-between items-center h-full gap-5 md:gap-16">
             <div className="flex flex-col items-center gap-5 md:w-1/2">
@@ -307,14 +300,7 @@ export default function Home() {
               </div>
 
               <div className="flex justify-center items-center my-2">
-                <Link
-                  href={LINKS.MONOBANK}
-                  target="_blank"
-                  className={`button-86`}
-                  onClick={() => setIsPaymentModalOpen(true)}
-                >
-                  Забронювати місце
-                </Link>
+                <PaymentButton onClick={() => setIsPaymentModalOpen(true)} />
               </div>
             </div>
 
@@ -351,56 +337,8 @@ export default function Home() {
               <span>+ 38 098 060 0316</span>
             </Link>
           </div>
-
-          <div className="w-screen md:w-1/2 md:left-1/2 md:-translate-x-1/2 h-80 -bottom-36 absolute z-30">
-            <Image
-              src={'/images/frame-bottom.png'}
-              alt="Frame bottom image"
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-          </div>
         </section>
       </div>
     </main>
   );
 }
-
-interface PaymentModalProps {
-  isPaymentModalOpen: boolean;
-  setIsPaymentModalOpen: (isOpen: boolean) => void;
-}
-
-const PaymentModal: FC<PaymentModalProps> = ({ isPaymentModalOpen, setIsPaymentModalOpen }) => {
-  return (
-    <div
-      className={`${
-        isPaymentModalOpen ? 'block' : 'hidden'
-      } fixed top-0 left-0 w-screen h-screen z-40 p-5 md:p-10 bg-black bg-opacity-75 transition-all`}
-      onClick={() => setIsPaymentModalOpen(false)}
-    >
-      <div
-        className="h-full w-full bg-white rounded-md shadow-2xl overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="bg-white w-full flex justify-end px-3 pt-3 md:px-10 md:pt-5 text-darkGreen">
-          <button
-            type="button"
-            className="w-10 h-10 hover:scale-110 transition-transform"
-            onClick={() => setIsPaymentModalOpen(false)}
-          >
-            <CloseIcon />
-          </button>
-        </div>
-        <div className="h-full">
-          <iframe
-            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1dilqw_bIL00wQaPuyW8NSIj6ezdiPPLKcRW1FZ3A0u2Va6cSbUJBEBE-UwZaXr09UOspvcPjJ?gv=true"
-            style={{ border: 0 }}
-            width="100%"
-            height="100%"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-  );
-};
