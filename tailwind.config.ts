@@ -9,15 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        red: '#bc4749',
+        red: '#CA2725',
         green: '#6a994e',
         darkGreen: '#386641',
-        beige: '#f2e8cf'
+        lightGreen: '#DFEADA',
+        beige: '#BBA791'
       },
       backgroundColor: {
-        red: '#bc4749',
+        red: '#CA2725',
         green: '#6a994e',
-        beige: '#f2e8cf',
+        beige: '#BBA791',
         darkGreen: '#386641'
       },
       fontSize: {

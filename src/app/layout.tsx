@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth focus:scroll-auto bg-white">
-      <body className={`${lato.className} relative`}>
+    <html lang="en" className="scroll-smooth focus:scroll-auto bg-white relative">
+      <body className={`${lato.className}`}>
         <div className="bg-green border-gray-200 fixed z-20 top-0 left-0 w-screen h-[62px] md:h-[64px]"></div>
         <FrameComponent />
         <Header />
