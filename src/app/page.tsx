@@ -14,6 +14,7 @@ import ScrollButton from '@/components/buttons/scroll';
 import PhoneIcon from '@/components/icons/phoneIcon';
 import PaymentButton from '@/components/buttons/payment';
 import PaymentModal from '@/components/modals/calendar';
+import { LINKS } from '@/constants';
 
 export default function Home() {
   const [isPaymentModalOpen, setIsPaymentModalOpen] = useState<boolean>(false);
@@ -324,7 +325,7 @@ export default function Home() {
                 <div className="w-6 h-6">
                   <PhoneIcon />
                 </div>
-                <span>+ 38 098 060 0316</span>
+                <span>{LINKS.PHONE_NUMBER}</span>
               </Link>
             </div>
           </div>
@@ -334,7 +335,7 @@ export default function Home() {
               <div className="w-6 h-6">
                 <PhoneIcon />
               </div>
-              <span>+ 38 098 060 0316</span>
+              <span>{LINKS.PHONE_NUMBER}</span>
             </Link>
           </div>
         </section>
