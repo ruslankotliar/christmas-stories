@@ -57,7 +57,7 @@ export default function Home() {
               </div>
               <div className="my-2 md:my-5 h-2/3 relative w-full">
                 <Image
-                  src={'/images/main-bg.png'}
+                  src={'/images/family.jpeg'}
                   alt="Christmas background image"
                   fill
                   style={{ objectFit: 'cover' }}
@@ -95,7 +95,7 @@ export default function Home() {
             </div>
             <div className="my-2 md:my-5 h-2/3 relative w-full">
               <Image
-                src={'/images/main-bg.png'}
+                src={'/images/about-us.jpeg'}
                 alt="Christmas background image"
                 fill
                 style={{ objectFit: 'cover' }}
@@ -256,7 +256,7 @@ export default function Home() {
 
         <section
           id="prices"
-          className="h-fit flex flex-col justify-center gap-10 items-center pt-20 md:pt-32 pb-24 md:pb-52"
+          className="h-fit flex flex-col justify-center gap-10 items-center pt-20 md:pt-32 pb-16 md:pb-52"
         >
           <div className="w-full flex flex-col md:flex-row justify-start md:justify-between items-center h-full gap-5 md:gap-16">
             <div className="flex flex-col items-center gap-5 md:w-1/2">
