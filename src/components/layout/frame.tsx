@@ -33,7 +33,7 @@ const FrameComponent = () => {
         className="absolute z-0 w-full flex flex-col 
       justify-start"
       >
-        {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 15 }).map((_, index) => (
           <div key={index} className={`flex justify-between h-[50vh]`}>
             <div className="left-0 -translate-x-1/2 w-28 z-30">
               <div className="h-full">
